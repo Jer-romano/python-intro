@@ -18,3 +18,15 @@ def sum_up_diagonals(matrix):
         >>> sum_up_diagonals(m2)
         30
     """
+    tl_to_br_total = 0
+    bl_to_tr_total = 0
+
+    for i in range(len(matrix)):
+        tl_to_br_total += matrix[i][i]
+
+    for j in range(len(matrix)):
+        bl_to_tr_total += matrix[-(j+1)][j]
+
+    #print("Here: " + str(tl_to_br_total))
+   # print("Here: " + str(bl_to_tr_total))
+    return tl_to_br_total + bl_to_tr_total

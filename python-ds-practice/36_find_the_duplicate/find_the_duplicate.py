@@ -10,6 +10,13 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([6, 1, 9, 5, 3, 4, 9])
         9
 
+        >>> find_the_duplicate([6, 1, 2, 5, 3, 4, 11, 9, 9])
+        9
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    nums.sort()
+    for i in range(1, len(nums)):
+        if nums[i] == nums[i-1]:
+            return nums[i]
+    return None
